@@ -1,0 +1,15 @@
+nSearch = 30;
+
+nIn = 100;
+nHid = 1000;
+nOut = 10;
+nPar = 10;
+
+nets{nSearch} = []; % init cell array
+for i = 1:nSearch
+    nets{i} = shatterinit(nIn,nHid,nOut,nPar);
+end
+
+shattertrain0 = @(
+
+out = cellfun(@shattertrain,
