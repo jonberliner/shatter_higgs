@@ -12,6 +12,8 @@ STOPWHEN = 0.05;
 
 PLOT_HUH = 1;
 
+USED = [2, 5];
+
 [Xtest Ytest] = preptestdata(USED,PTRAIN,PTEST);
 
 [nPer nIn ~] = size(Xtest.train);

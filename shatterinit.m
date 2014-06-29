@@ -1,5 +1,5 @@
-function snet = shatterinit3(nIn,nHid,nOut,nPar)
-% function net = shatterinit2(nIn,nHid,nOut,nPar)
+function snet = shatterinit(nIn,nHid,nOut,nPar)
+% function net = shatterinit(nIn,nHid,nOut,nPar)
 % IN:
 %   nIn : number input nodes
 %   nHid : number hidden nodes (currently only 1 hidden layer)
