@@ -1,4 +1,4 @@
-function [net,out] = trainbatchepoch_DROPOUT(net,bIN,bTAR,lrate)
+function [net,out] = trainbatchepoch_dropout(net,bIN,bTAR,lrate)
     
     [nPar, nInPer, nHidPer] = size(net.Wih);
     nHid = nPar * nHidPer;
@@ -28,7 +28,6 @@ function [net,out] = trainbatchepoch_DROPOUT(net,bIN,bTAR,lrate)
             hused(p, :) = randsample(nHidPer, nHidPerD2); % choose nodes
             ihused(p, :) = net.hid(p, hused(p, :)); % get shatterIDs
         end
-        ihused_flat = ihused(:);
         
         %% FORWARD PASS
         % net input to hidden
@@ -37,7 +36,7 @@ function [net,out] = trainbatchepoch_DROPOUT(net,bIN,bTAR,lrate)
             
             hused0 = hused(p, :);
             
-            % filter2noes
+            % filter2used
             Wih0 = squeeze(net.Wih(p, :, hused0));
             
             in0 = in(:, net.in(p, :));
